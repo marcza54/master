@@ -32,8 +32,6 @@ def combine():
     source = Source(NAME)
     for data in yaml.load(res.content):
         source_name = data.get('slug')
-        if source_name == NAME:
-            continue
         source.log.info("Combine [%(slug)s]: %(title)s", data)
         load_source(source_name)
     source.finish()
